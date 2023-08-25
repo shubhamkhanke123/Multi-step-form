@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <div class="steps">
+      <div class="step active">1</div>
+      <div class="step">2</div>
+      <div class="step">3</div>
+      <div class="step">4</div>
+    </div>
+    
+    <form id="multi-step-form">
+      <div class="step-content active">
+        <h2>Your Info</h2>
+        <p>Please provide your name, email address, and phone number.</p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="e.g. Stephen King" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" required>
+        <button class="next-btn">Next</button>
+      </div>
+      
+      <div class="step-content">
+        <h2>Select Plan</h2>
+        <p>You have the option of monthly or yearly billing.</p>
+        <label>Choose a Plan:</label>
+        <select id="plan">
+          <option value="arcade">$9/mo - Arcade</option>
+          <option value="advanced">$12/mo - Advanced</option>
+          <option value="pro">$15/mo - Pro</option>
+        </select>
+        <label>Billing Cycle:</label>
+        <input type="radio" name="billing" value="monthly" id="monthly" required>
+        <label for="monthly">Monthly</label>
+        <input type="radio" name="billing" value="yearly" id="yearly" required>
+        <label for="yearly">Yearly</label>
+        <button class="prev-btn">Go Back</button>
+        <button class="next-btn">Next</button>
+      </div>
+      
+      <div class="step-content">
+        <h2>Pick Add-ons</h2>
+        <p>Add-ons help enhance your gaming experience.</p>
+        <input type="checkbox" id="online-service">
+        <label for="online-service">Online Service (+$1/mo) - Access to multiplayer games</label><br>
+        <input type="checkbox" id="larger-storage">
+        <label for="larger-storage">Larger Storage (+$2/mo) - Extra 1TB of cloud save</label><br>
+        <input type="checkbox" id="custom-profile">
+        <label for="custom-profile">Customizable Profile (+$2/mo) - Custom theme on your profile</label><br>
+        <button class="prev-btn">Go Back</button>
+        <button class="next-btn">Next</button>
+      </div>
+      
+      <div class="step-content">
+        <h2>Finishing Up</h2>
+        <p>Double-check everything looks OK before confirming.</p>
+        <!-- Display user selections and total -->
+        <p>Total (per month/year): <span id="total">$9</span></p>
+        <button class="prev-btn">Go Back</button>
+        <button type="submit">Confirm</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
